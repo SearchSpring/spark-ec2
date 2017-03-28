@@ -20,6 +20,8 @@ echo $PRIVATE_DNS > /etc/hostname
 HOSTNAME=$PRIVATE_DNS  # Fix the bash built-in hostname variable too
 
 echo "Setting up slave on `hostname`..."
+# Clear our data in /mnt
+rm -rf /mnt/*
 
 # Mount options to use for ext3 and xfs disks (the ephemeral disks
 # are ext3, but we use xfs for EBS volumes to format them faster)
